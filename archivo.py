@@ -13,26 +13,20 @@ def agregar_contacto():
 
     with open("archivo.txt", "a") as archivo:
         archivo.write(f"{nombre},{numero}\n")
-    
     print("Contacto agregado exitosamente.")
     print()
-
 def actualizar_contacto():
     nombre = input("Ingrese el nombre del contacto a actualizar: ")
     nuevo_numero = input("Ingrese el nuevo número de teléfono: ")
-
     lineas_actualizadas = []
-
     with open("archivo.txt", "r") as archivo:
         for linea in archivo:
             datos = linea.strip().split(",")
             if datos[0] == nombre:
                 linea = f"{nombre},{nuevo_numero}\n"
             lineas_actualizadas.append(linea)
-
     with open("archivo.txt", "w") as archivo:
         archivo.writelines(lineas_actualizadas);
-
     if any(lineas_actualizadas):
         print("Contacto actualizado exitosamente.");
     else:
@@ -40,7 +34,6 @@ def actualizar_contacto():
     print()
 def eliminar_contacto():
     nombre = input("Ingrese el nombre del contacto a eliminar: ")
-
     lineas_actualizadas = []
     with open("agenda.txt", "r") as archivo:
         for linea in archivo:
