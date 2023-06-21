@@ -56,7 +56,6 @@ def eliminar_contacto():
     else:
         print("No se encontró el contacto en la agenda.")
     print()
-# Función principal del programa
 def main():
     while True:
         mostrar_menu()
@@ -74,6 +73,4 @@ def main():
         else:
             print("Opción inválida. Por favor, seleccione una opción válida.")
         print()
-
-# Ejecutar el programa
 main()
