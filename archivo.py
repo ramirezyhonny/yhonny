@@ -45,8 +45,10 @@ def actualizar_contacto():
             if datos[0] == nombre:
                 linea = f"{nombre},{nuevo_numero}\n";
             lineas_actualizadas.append(linea);
+    
     with open("archivo.txt", "w") as archivo:
         archivo.writelines(lineas_actualizadas);
+    
     if any(lineas_actualizadas):
         print("Contacto actualizado exitosamente.");
     else:
@@ -60,7 +62,6 @@ def eliminar_contacto():
             datos = linea.strip().split(",");
             if datos[0] != nombre:
                 lineas_actualizadas.append(linea);
-
     with open("archivo.txt", "w") as archivo:
         archivo.writelines(lineas_actualizadas);
 
